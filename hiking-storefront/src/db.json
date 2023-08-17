@@ -1,0 +1,7 @@
+{
+    "items": [
+      { "id": 1, "name": "Hiking Boots", "description": "Durable hiking boots for all terrains.", "price": "$100" },
+      { "id": 2, "name": "Backpack", "description": "30L backpack perfect for day trips.", "price": "$60" }
+    ]
+  }
+  
