@@ -8,7 +8,7 @@ function ItemList() {
   useEffect(() => {
     fetch(`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/db.json`)
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data.items));
   }, []);
 
   return (
