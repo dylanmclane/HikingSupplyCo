@@ -6,7 +6,7 @@ function ItemList() {
 
   // fetch data for list of items from mock REST API json
   useEffect(() => {
-    fetch(`https://github.com/dylanmclane/HikingSupplyCo/blob/main/src/db.json`)
+    fetch(`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/db.json`)
       .then((response) => response.json())
       .then((data) => setItems(data));
   }, []);
