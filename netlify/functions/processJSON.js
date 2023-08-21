@@ -1,4 +1,4 @@
-const data = require('../path_to_your_db.json');
+const data = require('https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/db.json');
 
 exports.handler = async (event, context) => {
   const itemId = parseInt(event.queryStringParameters.id);
