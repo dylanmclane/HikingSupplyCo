@@ -39,7 +39,7 @@ function ItemDetail({ addToCart }) {
 
   // fetch data for specific item id from mock REST API json
   useEffect(() => {
-    fetch(`http://localhost:3001/items/${id}`)
+    fetch(`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/db.json/${id}`)
       .then((response) => response.json())
       .then((data) => setItem(data));
   }, [id]);
