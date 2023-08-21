@@ -39,7 +39,7 @@ function ItemDetail({ addToCart }) {
 
   // fetch data for specific item id from mock REST API json
   useEffect(() => {
-    fetch(`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/db.json/${id}`)
+    fetch(`/netlify/functions/processJSON?id=${id}`)
       .then((response) => response.json())
       .then((data) => setItem(data));
   }, [id]);
