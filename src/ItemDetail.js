@@ -65,7 +65,7 @@ function ItemDetail({ addToCart }) {
 
           {showPopup && <div className="popup">Item added to cart!</div>}
         </>
-      )},
+      )}
       
     </div>
   );
