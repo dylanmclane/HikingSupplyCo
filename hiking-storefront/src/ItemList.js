@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function ItemList() {
   const [items, setItems] = useState([]);
 
+  // fetch data for list of items from mock REST API json
   useEffect(() => {
     fetch(`http://localhost:3001/items`)
       .then((response) => response.json())

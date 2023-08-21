@@ -1,7 +1,10 @@
 {
     "items": [
       { "id": 1, "name": "Hiking Boots", "description": "Durable hiking boots for all terrains.", "price": "$100" },
-      { "id": 2, "name": "Backpack", "description": "30L backpack perfect for day trips.", "price": "$60" }
+      { "id": 2, "name": "Backpack", "description": "30L backpack perfect for day trips.", "price": "$60" },
+      { "id": 3, "name": "Energy Bars", "description": "Box of 12 high protein energy bars.", "price": "$30" },
+      { "id": 4, "name": "Tent", "description": "A tent for two. A lightweight tent suitable for weekend camping trips.", "price": "$80" },
+      { "id": 5, "name": "Metal Water Bottle", "description": "Highly durable reusable water bottle. Holds 64oz.", "price": "$30" }
     ]
   }
   
