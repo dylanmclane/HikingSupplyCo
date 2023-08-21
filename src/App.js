@@ -14,20 +14,14 @@ function App() {
     setCart(prevCart => [...prevCart, item]);
   };
 
-  const emptyCart = () => {
-    setCart([]);
-  }
-
-
-
   return (
     <Router>
       <div>
-        <Navigation />
+        <Navigation cart={cart} />
         <Routes>
           <Route path="/ItemList" element={<ItemList />} />
           <Route path="/item/:id" element={<ItemDetail addToCart={addToCart} />} />
-          <Route path="/cart" element={<ShoppingCart cart={cart} onEmptyCart={emptyCart} />} />
+          <Route path="/cart" element={<ShoppingCart cart={cart} setCart={setCart} />} />
           
           {/* Add a default route. In this case, redirecting to ItemList. */}
           <Route path="/" element={<ItemList />} />
