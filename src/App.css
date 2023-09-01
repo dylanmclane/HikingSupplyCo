@@ -101,3 +101,20 @@ a:hover {
   z-index: 1000;
 }
 
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin:20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.item-image img {
+  width: 100%; /* makes image responsive */
+  max-height: 200px;
+  object-fit: cover; /* makes image cover the div */
+}

@@ -12,13 +12,16 @@ function ItemList() {
   }, []);
 
   return (
-    <div>
-      {items.map((item) => (
-        <div className="item" key={item.id}>
-          <h3><Link to={`/item/${item.id}`}>{item.name}</Link></h3>
+    <div className="item-list">
+    {items.map((item) => (
+      <div className="item" key={item.id}>
+        <div className="item-image">
+          <img src={`/images/${item.image}`} alt={item.name} />
         </div>
-      ))}
-    </div>
+        <h3><Link to={`/item/${item.id}`}>{item.name}</Link></h3>
+      </div>
+    ))}
+  </div>
   );
 }
 
