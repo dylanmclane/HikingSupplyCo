@@ -16,7 +16,7 @@ function ItemList() {
     {items.map((item) => (
       <div className="item" key={item.id}>
         <div className="item-image">
-          <img src={`/images/${item.image}`} alt={item.name} />
+          <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} />
         </div>
         <h3><Link to={`/item/${item.id}`}>{item.name}</Link></h3>
       </div>
