@@ -118,3 +118,10 @@ a:hover {
   max-height: 200px;
   object-fit: cover; /* makes image cover the div */
 }
+
+/* image styles on item details component */
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}

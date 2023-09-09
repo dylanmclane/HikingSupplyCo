@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+// Set up the context for images
+const imageContext = require.context('./images', false, /\.(png|jpe?g)$/);
+
 function ItemDetail({ addToCart }) {
   const [item, setItem] = useState(null);
 
@@ -33,7 +36,6 @@ function ItemDetail({ addToCart }) {
     }, 2000);
   };
 
-  
   // Get the id from the route parameters
   const { id } = useParams(); 
 
@@ -45,10 +47,17 @@ function ItemDetail({ addToCart }) {
       .then((data) => setItem(data));
   }, [id]);
 
+  // Determine image path dynamically
+  let imagePath;
+  if (item && item.imageName) {
+    imagePath = imageContext(`./${item.imageName}.png`);
+  }
+
   return (
     <div className="item-detail">
       {item && (
         <>
+          <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} className="product-image" />
           <h2>{item.name}</h2>
           <p>{item.description}</p>
           <p>Price: {item.price}</p>
@@ -58,16 +67,10 @@ function ItemDetail({ addToCart }) {
               <button onClick={increment}>+</button>
           </div>
 
-          <button onClick={() => {
-            console.log("Button clicked, adding item: ", item);
-            handleAddToCart();  
-            
-          }}>Add to Cart</button>
-
+          <button onClick={handleAddToCart}>Add to Cart</button>
           {showPopup && <div className="popup">Item added to cart!</div>}
         </>
       )}
-      
     </div>
   );
 }
