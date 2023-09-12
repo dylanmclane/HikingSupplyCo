@@ -1,3 +1,5 @@
+/* General styles */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -15,7 +17,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: bold;
 }
 
 .item {
@@ -30,6 +32,8 @@ a:hover {
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
+/* item details component styles */
+
 .item-detail {
   border: 1px solid #ddd;
   padding: 20px;
@@ -40,16 +44,40 @@ a:hover {
 
 .item-detail button {
   padding: 10px 15px;
-  background-color: #0077cc;
   border: none;
-  color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .item-detail button:hover {
-  background-color: #0055aa;
+  background-color: #555555;
 }
+
+.item-detail input {
+  width:20px;
+  margin: 10px 10px 0 10px;
+  font-size: 22px;
+  border: none;
+
+}
+
+.add-minus{
+  height:50px;
+  width: 50px;
+  color: #000;
+  font-size: 22px;
+}
+
+.cart-button {
+  margin-top: 10px;
+  height: 50px;
+  width: 250px;
+  background-color: #026b14;
+  color: #fff;
+  font-weight: bolder;
+}
+
+/* Cart component styles */
 
 .cart-item {
   padding: 10px;

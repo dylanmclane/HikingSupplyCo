@@ -62,12 +62,12 @@ function ItemDetail({ addToCart }) {
           <p>{item.description}</p>
           <p>Price: {item.price}</p>
           <div>
-              <button onClick={decrement}>-</button>
+              <button onClick={decrement} className="add-minus">-</button>
               <input type="number" value={quantity} readOnly />
-              <button onClick={increment}>+</button>
+              <button onClick={increment} className="add-minus">+</button>
           </div>
 
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <button onClick={handleAddToCart} className="cart-button">Add to Cart</button>
           {showPopup && <div className="popup">Item added to cart!</div>}
         </>
       )}

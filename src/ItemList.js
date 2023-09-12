@@ -15,10 +15,12 @@ function ItemList() {
     <div className="item-list">
     {items.map((item) => (
       <div className="item" key={item.id}>
+        <Link to={`/item/${item.id}`}>
         <div className="item-image">
           <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} />
         </div>
-        <h3><Link to={`/item/${item.id}`}>{item.name}</Link></h3>
+        <h3>{item.name}</h3>
+        </Link>
       </div>
     ))}
   </div>
