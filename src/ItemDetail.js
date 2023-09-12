@@ -60,7 +60,7 @@ function ItemDetail({ addToCart }) {
           <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} className="product-image" />
           <h2>{item.name}</h2>
           <p>{item.description}</p>
-          <p>Price: {item.price}</p>
+          <p className="price">{item.price}</p>
           <div>
               <button onClick={decrement} className="add-minus">-</button>
               <input type="number" value={quantity} readOnly />

@@ -8,12 +8,12 @@ body {
 }
 
 h2, h3 {
-  color: #333;
+  color: #000;
 }
 
 a {
   text-decoration: none;
-  color: #0077cc;
+  color: #000000;
 }
 
 a:hover {
@@ -42,6 +42,11 @@ a:hover {
   border-radius: 5px;
 }
 
+.price {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 .item-detail button {
   padding: 10px 15px;
   border: none;
@@ -54,11 +59,12 @@ a:hover {
 }
 
 .item-detail input {
-  width:20px;
-  margin: 10px 10px 0 10px;
+  width:30px;
+  height:50px;
+  margin: 10px 0 0 10px;
   font-size: 22px;
+  text-align: right;
   border: none;
-
 }
 
 .add-minus{

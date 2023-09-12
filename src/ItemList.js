@@ -20,6 +20,7 @@ function ItemList() {
           <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} />
         </div>
         <h3>{item.name}</h3>
+        <p className="price">{item.price}</p>
         </Link>
       </div>
     ))}
