@@ -47,14 +47,7 @@ a:hover {
   font-weight: bolder;
 }
 
-.item-detail button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.item-detail button:hover {
+button:hover {
   background-color: #555555;
 }
 
@@ -72,6 +65,10 @@ a:hover {
   width: 50px;
   color: #000;
   font-size: 22px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .cart-button {
@@ -81,17 +78,33 @@ a:hover {
   background-color: #026b14;
   color: #fff;
   font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Cart component styles */
-
+.cart {
+  margin: 20px;
+}
 .cart-item {
+  display: flex;
+  align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  margin: 0 20px;
+}
+
+.thumbnail {
+  width: 100px; 
+  height: 100px;
+  margin-right: 10px; 
+  object-fit: cover; /* To maintain aspect ratio */
 }
 
 .total-price {
   font-weight: bold;
+  margin-left: 20px;
 }
 
 /* Navigation bar styles */
