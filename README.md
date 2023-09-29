@@ -1,6 +1,6 @@
 # Hiking Supply React Ecommerce store
 
-Project currently hosted at: 
+Project currently hosted at: https://hikingsupplyco.netlify.app/
 
 This project currently contains:
 - Mock API connection to items db.json file
