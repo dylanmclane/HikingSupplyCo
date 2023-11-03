@@ -41,8 +41,8 @@ function ItemDetail({ addToCart }) {
 
   // fetch data for specific item id from mock REST API json
   useEffect(() => {
-    // fetch(`https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=${id}`)
-    fetch(`http://localhost:3001/items/${id}`) // For local
+    fetch(`https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=${id}`)
+    // fetch(`http://localhost:3001/items/${id}`) // For local
       .then((response) => response.json())
       .then((data) => setItem(data));
   }, [id]);

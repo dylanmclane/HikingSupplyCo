@@ -7,7 +7,7 @@ function HomePage() {
 
     useEffect(() => {
         if (!initialFetch.current) {
-        const productionUrl = `https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=all`; // Assuming 'all' fetches all items
+        const productionUrl = `https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=${id}`; // Assuming 'all' fetches all items
         const developmentUrl = `http://localhost:3001/items`;
         const url = process.env.NODE_ENV === 'production' ? productionUrl : developmentUrl;
         
