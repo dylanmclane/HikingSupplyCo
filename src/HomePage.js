@@ -1,16 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
 
 function HomePage() {
-
     const [featuredProducts, setProducts] = useState([]);
+    const initialFetch = useRef(false);
 
     useEffect(() => {
-        fetch(`https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=${id}`)
-        // fetch(`http://localhost:3001/items/`) // For local
+        if (!initialFetch.current) {
+        const productionUrl = `https://hikingsupplyco.netlify.app/.netlify/functions/processJSON?id=all`; // Assuming 'all' fetches all items
+        const developmentUrl = `http://localhost:3001/items`;
+        const url = process.env.NODE_ENV === 'production' ? productionUrl : developmentUrl;
+        
+        fetch(url)
             .then(response => response.json())
-            .then(data => setProducts(data)) // Adjust if your data structure is different
+            .then(data => {
+                // If the data is wrapped in an object with the key 'items', extract it
+                const items = data.items ? data.items : data;
+                setProducts(items);
+                console.log("Fetched data:", items);
+            })
             .catch(error => console.error('Error fetching products:', error));
+            initialFetch.current = true;
+        }
     }, []);
 
     return (
@@ -25,13 +36,13 @@ function HomePage() {
         <section className="featured-products">
           <h2>Featured Products</h2>
           <div className="products-grid">
-          {featuredProducts.map(product => (
-                <div key={product.id} className="item">
-                    <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${product.image}`} alt={product.name} className="item-image" />
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                    <p className="price">{product.price}</p>
-                    <Link to={`/products/${product.id}`} className="btn btn-primary">View Details</Link>
+          {featuredProducts.map(item => (
+                <div key={item.id} className="item">
+                    <img src={`https://raw.githubusercontent.com/dylanmclane/HikingSupplyCo/main/src/images/${item.image}`} alt={item.name} className="item-image" />
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                    <p className="price">{item.price}</p>
+                    <Link to={`/item/${item.id}`} className="btn btn-primary">View Details</Link>
                 </div>
             ))}   
           </div>
